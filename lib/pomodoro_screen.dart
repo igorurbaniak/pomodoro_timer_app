@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pomodoro_timer_app/widgets/timercard.dart';
 
 class PomodoroScreen extends StatelessWidget {
   const PomodoroScreen({Key? key}) : super(key: key);
@@ -7,10 +8,10 @@ class PomodoroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.redAccent,
+      backgroundColor: Colors.lightBlueAccent,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.lightBlueAccent,
         title: Text(
           "POMOTIMER",
           style: GoogleFonts.carterOne(
@@ -35,9 +36,8 @@ class PomodoroScreen extends StatelessWidget {
           alignment: Alignment.center,
           child: Column(
             children: const [
-              SizedBox(
-                height: 15,
-              ),
+              SizedBox(height: 15),
+              TimerCard(),
             ],
           ),
         ),
