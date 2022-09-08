@@ -59,4 +59,13 @@ class TimerService extends ChangeNotifier {
     }
     notifyListeners();
   }
+
+  void reset() {
+    timer.cancel();
+    currentState = 'FOCUS';
+    currentDuration = selectedTime = 1500;
+    rounds = goal = 0;
+    timerPlaying = false;
+    notifyListeners();
+  }
 }
