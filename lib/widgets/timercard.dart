@@ -13,7 +13,7 @@ class TimerCard extends StatelessWidget {
     return Column(
       children: [
         Text(
-          'FOCUS',
+          provider.currentState,
           style: GoogleFonts.carterOne(
             fontSize: 35,
             color: Colors.white,
@@ -44,7 +44,7 @@ class TimerCard extends StatelessWidget {
                   (provider.currentDuration ~/ 60).toString(),
                   style: GoogleFonts.carterOne(
                     fontSize: 70,
-                    color: Colors.blueGrey,
+                    color: Colors.black,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -57,7 +57,7 @@ class TimerCard extends StatelessWidget {
               ':',
               style: GoogleFonts.carterOne(
                 fontSize: 60,
-                color: Colors.blueGrey,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -86,7 +86,7 @@ class TimerCard extends StatelessWidget {
                       : seconds.round().toString(),
                   style: GoogleFonts.carterOne(
                     fontSize: 70,
-                    color: Colors.blueGrey,
+                    color: Colors.black,
                     fontWeight: FontWeight.w700,
                   ),
                 ),

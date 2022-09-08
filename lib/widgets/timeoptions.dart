@@ -39,7 +39,7 @@ class TimeOptions extends StatelessWidget {
                 style: int.parse(time) == provider.selectedTime
                     ? GoogleFonts.carterOne(
                         fontSize: 25,
-                        color: Colors.blueGrey,
+                        color: Colors.black,
                         fontWeight: FontWeight.w700,
                       )
                     : GoogleFonts.carterOne(

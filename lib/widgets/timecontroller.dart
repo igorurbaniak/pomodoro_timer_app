@@ -14,10 +14,10 @@ class _TimeControllerState extends State<TimeController> {
   Widget build(BuildContext context) {
     final provider = Provider.of<TimerService>(context);
     return Container(
-      width: 100,
-      height: 100,
+      width: 120,
+      height: 120,
       decoration: const BoxDecoration(
-        color: Colors.black26,
+        color: Colors.black,
         shape: BoxShape.circle,
       ),
       child: Center(
@@ -31,7 +31,7 @@ class _TimeControllerState extends State<TimeController> {
                 : Provider.of<TimerService>(context, listen: false).start();
           },
           color: Colors.white,
-          iconSize: 55,
+          iconSize: 100,
         ),
       ),
     );

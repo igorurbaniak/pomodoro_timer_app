@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 List selectableTimes = [
   '300',
   '600',
@@ -11,3 +13,11 @@ List selectableTimes = [
   '3000',
   '3300',
 ];
+
+Color renderColor(String currentState) {
+  if (currentState == 'FOCUS') {
+    return Colors.purple;
+  } else {
+    return Colors.green;
+  }
+}
