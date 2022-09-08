@@ -38,15 +38,15 @@ class PomodoroScreen extends StatelessWidget {
         child: Container(
           alignment: Alignment.center,
           child: Column(
-            children: [
-              const SizedBox(height: 25),
-              const TimerCard(),
-              const SizedBox(height: 45),
+            children: const [
+              SizedBox(height: 25),
+              TimerCard(),
+              SizedBox(height: 45),
               TimeOptions(),
-              const SizedBox(height: 45),
+              SizedBox(height: 45),
               TimeController(),
-              const SizedBox(height: 45),
-              const ProgressWidget(),
+              SizedBox(height: 45),
+              ProgressWidget(),
             ],
           ),
         ),

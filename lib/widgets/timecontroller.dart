@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pomodoro_timer_app/timerservice.dart';
+import 'package:provider/provider.dart';
 
 class TimeController extends StatefulWidget {
-  TimeController({Key? key}) : super(key: key);
+  const TimeController({Key? key}) : super(key: key);
 
   @override
   State<TimeController> createState() => _TimeControllerState();
@@ -10,6 +12,7 @@ class TimeController extends StatefulWidget {
 class _TimeControllerState extends State<TimeController> {
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<TimerService>(context);
     return Container(
       width: 100,
       height: 100,
@@ -19,8 +22,14 @@ class _TimeControllerState extends State<TimeController> {
       ),
       child: Center(
         child: IconButton(
-          icon: const Icon(Icons.pause),
-          onPressed: () {},
+          icon: provider.timerPlaying
+              ? const Icon(Icons.pause)
+              : const Icon(Icons.play_arrow_sharp),
+          onPressed: () {
+            provider.timerPlaying
+                ? Provider.of<TimerService>(context, listen: false).puase()
+                : Provider.of<TimerService>(context, listen: false).start();
+          },
           color: Colors.white,
           iconSize: 55,
         ),
