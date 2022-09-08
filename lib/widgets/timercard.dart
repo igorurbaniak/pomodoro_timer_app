@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pomodoro_timer_app/timerservice.dart';
+import 'package:provider/provider.dart';
 
 class TimerCard extends StatelessWidget {
   const TimerCard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<TimerService>(context);
+    final seconds = provider.currentDuration % 60;
     return Column(
       children: [
         Text(
@@ -37,7 +41,7 @@ class TimerCard extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  '25',
+                  (provider.currentDuration ~/ 60).toString(),
                   style: GoogleFonts.carterOne(
                     fontSize: 70,
                     color: Colors.blueGrey,
@@ -77,7 +81,9 @@ class TimerCard extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  '00',
+                  seconds == 0
+                      ? '${seconds.round()}0'
+                      : seconds.round().toString(),
                   style: GoogleFonts.carterOne(
                     fontSize: 70,
                     color: Colors.blueGrey,
